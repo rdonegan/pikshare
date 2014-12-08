@@ -1,0 +1,214 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+  background: #1D1859;
+  color:white;
+}
+
+
+/***************
+Count information retrieved form db
+***************/
+.count{
+  font-size: 2em;
+}
+
+.countNum{
+  display:inline-block;
+  background-color: #e9e9e9;
+  color:#151515;
+}
+
+
+/*containers*/
+
+#nickwrap{
+  margin-top:5%;
+}
+
+#contentWrap{
+    overflow:auto;
+    display:none;
+    margin:auto;
+    border: 1px solid #ddd;
+    width:75%;
+    height:95%;
+    border-radius: 10px;
+    position: relative;
+    background-color: #f6f6f6;
+    color:#3f3f3f;
+}
+
+#users{
+  text-align:left;
+}
+
+.userList{
+  margin:2px;
+  padding:4px;
+  border-radius: 10px;
+  background-color: #C5C2EE;
+  display:inline-block;
+}
+
+
+/***************
+Chat box styling
+***************/
+
+#chatWrap{
+  float:left;
+  padding-left:.5em;
+  padding-right:.2em;
+  background-color:#e0e0e0;
+  width:80%;
+}
+
+#chat{
+  background-color: #ffffff;
+  height:80%;
+	/*height:350px;*/
+}
+
+#chat #lines{
+  color:#bdbdbd;
+    text-align:left;
+    height:100%;
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/*scrollbar functionality adapted from 
+http://blog.marcon.me/post/31143865164/send-images-through-websockets*/
+#chat #lines::-webkit-scrollbar-button:start:decrement,
+#chat #lines ::-webkit-scrollbar-button:end:increment {
+  display: block;
+  height: 10px;
+}
+#chat #lines::-webkit-scrollbar-button:vertical:increment {
+  background-color: #fff;
+}
+#chat #lines::-webkit-scrollbar-track-piece {
+  background-color: #fff;
+  -webkit-border-radius: 3px;
+}
+#chat #lines::-webkit-scrollbar-thumb:vertical {
+  height: 50px;
+  background-color: #ccc;
+  -webkit-border-radius: 3px;
+}
+
+/*****************
+Nickname entry
+*****************/
+
+#nickname{
+
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 300px;
+    font-size: 14px;
+    color: #777;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+
+}
+
+input[type=submit] {
+    color:#3f3f3f;
+    padding:7px 15px; 
+    font-size: .80em;
+    background:white; 
+    border: 1px solid #ccc;
+    cursor:pointer;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    height:38px;
+    padding-top:9px;
+ }
+
+/*****************
+.controls 
+******************/
+
+.controls{
+  height:20%;
+}
+
+.filebutton{
+  display:inline-block;
+}
+
+#video, #startbutton, .filebutton {
+    display: block;
+    float: left;
+    border: 5px solid black;
+    border-radius: 7px;
+}
+#video{
+  height:60%;
+  width:25%;
+  display:inline-block;
+}
+
+#startbutton {
+    background: #453DA5;
+    border: none;
+    color: #fff;
+    margin-left:.4em;
+   /* margin: 100px 20px 20px 20px;*/
+    padding: 7px 10px;
+    font-size: 20px;
+    display:inline-block;
+}
+
+.filebutton{
+  overflow:hidden;
+  border:none;
+  margin-left:.4em;
+}
+
+.filebutton input#imagefile{
+  font-size:1em;
+}
+
+#canvas{
+    visibility: hidden;
+    height:0px;
+}
+
+.newImg{
+    max-width: 80%;
+}
+
+/*************
+hide video option if on tablet/mobile device
+*************/
+
+
+
+@media screen and (max-device-width: 480px) {
+    #video, #startbutton, #users {
+        visibility: hidden;
+        height:0px;
+    }
+
+    #contentWrap{
+      width:100%;
+    }
+
+    #chatWrap{
+      height:90%;
+    }
+
+    .controls{
+      height:10%;
+    }
+  }
+
+
+

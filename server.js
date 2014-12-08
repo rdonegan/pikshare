@@ -26,7 +26,7 @@ var SimpleStaticServer = function() {
      * use default values of localhost (127.0.0.1) and 33333 (arbitrary).
      */
     self.ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
-    self.port      = process.env.OPENSHIFT_NODEJS_PORT || 33333;
+    self.port      = process.env.OPENSHIFT_NODEJS_PORT || 50000;
 
     //  Start listening on the specific IP and PORT
     self.app.listen(self.port, self.ipaddress, function() {
