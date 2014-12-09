@@ -12,7 +12,7 @@ var port = process.env.OPENSHIFT_NODEJS_PORT || 50000;
 app.use(morgan('tiny'));
 
 // load static pages
-app.use(express.static(path.join(__dirname + 'public')));
+app.use(express.static(__dirname + '/public'));
 
 //initialize socket.io
 var httpServer = require('http').Server(app);
