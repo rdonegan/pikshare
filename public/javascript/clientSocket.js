@@ -2,7 +2,7 @@
 saved variables
 ***************/
 
-var socket = io.connect('/');
+var socket = io.connect(':8000/');
 
 var nickForm = $('#setNick');
 var nickError = $('#nickError');
