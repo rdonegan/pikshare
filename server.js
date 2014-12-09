@@ -3,6 +3,10 @@ var app = express();
 var morgan = require('morgan');
 var route = require('./routes/serverSocket.js');
 
+
+var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+var port = process.env.OPENSHIFT_NODEJS_PORT || 50000;
+
 // Log requests
 app.use(morgan('tiny'));
 
@@ -16,7 +20,7 @@ var io = sio(httpServer);
 
 // httpServer.get('/', route.updateDB);
 
-httpServer.listen(50000, function() {console.log('Listening on 50000');});
+httpServer.listen(port, ipaddress);
 
 
 var serverSockets = require('./routes/serverSocket.js');
