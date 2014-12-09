@@ -9,10 +9,6 @@ app.use(morgan('tiny'));
 // load static pages
 app.use(express.static(__dirname + '/public'));
 
-//USE THIS TO GET INFO FROM THE DATABASE WITHOUT PRESSING ANYTHING
-// app.get('/', dbRoutes.index);
-
-// app.get('/', function(req, res) { return res.send("hello")});
 //initialize socket.io
 var httpServer = require('http').Server(app);
 var sio =require('socket.io');

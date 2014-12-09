@@ -9,23 +9,15 @@ exports.init = function(io) {
 	}
 
 	io.sockets.on('connection', function(socket){
-
-		
-		// console.log("currently:" + mongo.getCurrVal("total", function(){}));
-
 		//perform when the homepage is first opened
 		mongo.getCurrVal("total", function(val){
-			// console.log("the current value is: " + val);
-			// console.log(typeof val+"");
 			socket.emit('get total', val);
 		})
 
 		//check if username is stored on browser
 		io.sockets.emit('stored username');
 	
-
 		socket.on('newUser', function(data, callback){
-			// console.log("stored nicknames: " + nicknames[0]);
 			if(nicknames.indexOf(data) !== -1 || data ==""){
 				callback(false);
 			}
@@ -44,16 +36,11 @@ exports.init = function(io) {
       		mongo.update("total");
     	});
 
-
 		socket.on('disconnect', function(data){
 			if(!socket.nickname) return;
 			nicknames.splice(nicknames.indexOf(socket.nickname), 1);
 			updateNicknames();
 		});
 	});
-
-
-
-	
 
 }

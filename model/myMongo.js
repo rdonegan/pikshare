@@ -54,18 +54,15 @@ exports.find = function(collection, query, callback) {
 
 // UPDATE
 //Updates total collection by 1
-exports.update = function(collection){ //, callback) {
+exports.update = function(collection){ 
 	//find current value stored
 	var crsr = mongoDB.collection("total").find();
 	crsr.toArray(function(err,docs){
-  	// console.log("docs is: " + docs);
   		console.log("docs is: "+ docs[0]["num"]);
   		updateVal(collection, docs[0]["num"]+1)
-  		// curNum += docs[0]["num"];
   	
   	});
-
-        
+     
   };
 
 

@@ -203,6 +203,7 @@ hide video option if on tablet/mobile device
 
     #chatWrap{
       height:90%;
+      width:100%;
     }
 
     .controls{
