@@ -16,7 +16,7 @@ var io = sio(httpServer);
 
 // httpServer.get('/', route.updateDB);
 
-httpServer.listen(8000, function() {console.log('Listening on 50000');});
+httpServer.listen(50000, function() {console.log('Listening on 50000');});
 
 
 var serverSockets = require('./routes/serverSocket.js');
