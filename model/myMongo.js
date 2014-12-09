@@ -3,12 +3,23 @@ var mongoClient = require('mongodb').MongoClient;
 /*
  * This is the connection URL and the database name
  */
-var url = 'mongodb://localhost:27017/pikCount';
+// var url = 'mongodb://localhost:27017/pikCount';
+  var url = 'localhost:27017/pikCount';
+// if OPENSHIFT env variables are present, use the available connection info:
+if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
+  url = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
+  process.env.OPENSHIFT_MONGODB_DB_PASSWORD + "@" +
+  process.env.OPENSHIFT_MONGODB_DB_HOST + ':' +
+  process.env.OPENSHIFT_MONGODB_DB_PORT + '/' +
+  process.env.OPENSHIFT_APP_NAME;
+}
+
+
 var mongoDB; // The connected database
 
 
 // Use connect method to connect to the Server
-mongoClient.connect(url, function(err, db) {
+mongoClient.connect("mongodb://" + url, function(err, db) {
   if (err) doError(err);
   console.log("Connected correctly to server");
   mongoDB = db;
