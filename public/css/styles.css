@@ -189,8 +189,6 @@ input[type=submit] {
 hide video option if on tablet/mobile device
 *************/
 
-
-
 @media screen and (max-device-width: 480px) {
     #video, #startbutton, #users {
         visibility: hidden;
