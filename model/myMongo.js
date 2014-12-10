@@ -3,8 +3,7 @@ var mongoClient = require('mongodb').MongoClient;
 /*
  * This is the connection URL and the database name
  */
-// var url = 'mongodb://localhost:27017/pikCount';
-  var url = 'localhost:27017/pikCount';
+var url = 'localhost:27017/pikCount';
 // if OPENSHIFT env variables are present, use the available connection info:
 if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
   url = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
@@ -38,6 +37,9 @@ mongoClient.connect("mongodb://" + url, function(err, db) {
 
 
 // INSERT
+//Only used to initialize database in this case.
+//Called the first time db is deployed, initializing image count to 1.
+//After this, the UPDATE method is called on that collection.
 exports.insert = function(collection, query, callback) {
         console.log("start insert");
         mongoDB.collection(collection).insert(
@@ -64,7 +66,7 @@ exports.find = function(collection, query, callback) {
 
 
 // UPDATE
-//Updates total collection by 1
+//Updates collection by adding 1 to toal
 exports.update = function(collection){ 
 	//find current value stored
 	var crsr = mongoDB.collection("total").find();

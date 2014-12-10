@@ -16,7 +16,6 @@ var chat = $('#chat');
 var lines = $('#lines');
 
 
-
 /***************
 username entry
 ***************/
@@ -133,11 +132,11 @@ function sendImageSocket(img){
   console.log("sendimagesocket");
   socket.emit('user image', img);
 
-  //update database
-  // socket.emit('updateDatabase');
-
 }
 
+
+/*based image send functionality off of 
+http://blog.marcon.me/post/31143865164/send-images-through-websockets*/
 
 /***************************
 client response on image
@@ -148,8 +147,6 @@ socket.on('user image', image);
 //process the image and append to .lines
 function image (from, base64Image) {
   console.log("nickname is: " + nickname);
-	// console.log("got to the image thing...");
-
   lines.append($('<p>').append($('<b>').text(from + " "), '<img class="newImg" src="' + base64Image + '"/>'));
   
   
