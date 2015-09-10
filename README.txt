@@ -11,6 +11,8 @@ To run PikShare on node.js locally:
 3. Change the first uncommented line of code from "var socket = io.connect(':8000/');" to "var socket = io.connect('/');"
 4. Run 'node server' in terminal.
 
+* View a live version at http://pikshare-rdonegan.rhcloud.com/
+
 
 Project Resources:
 
