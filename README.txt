@@ -4,6 +4,9 @@ An app by Ryan Donegan
 Created for 67-328, Fall 2014
 ***************
 
+Created for Mobile to Web: Developing Distributed Applications. PikShare allows users to log on with a custom, unique username and communicate with other users via photo. Similar to Snapchat, users are able to communicate via picture only. Compatible with mobile devices.
+
+
 To run PikShare on node.js locally:
 
 1. cd to Pikshare directory
